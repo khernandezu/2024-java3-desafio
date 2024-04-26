@@ -1,0 +1,50 @@
+mport javax.swing.*;
+import java.util.Scanner;
+
+public class Desafio {
+   public static void main(String[] args) {
+
+      while (true){
+          System.out.println("Conversor de Monedas");
+          System.out.println("1 - Dolar a Peso Argentino\n"
+                  +  "2 - Dolar a Real Brasileño\n"
+                  +  "3 - Dolar a Peso Colombiano\n"
+                  +  "4 - Salir ");
+          System.out.println("Escoja la opcion que desea convertir");
+          Scanner leer = new Scanner(System.in);
+          char opcion = leer.next().charAt(0);
+
+          switch (opcion){
+              case 1:
+                  convertir(873.73, "Peso Argentino");
+                  break;
+              case 2:
+                  convertir(5.16, "Real Brasileño");
+                  break;
+              case 3:
+                  convertir(3957.76, "Peso Colombiano");
+                  break;
+              case 4:
+                System.out.println("Finalizar proceso");
+                  break;
+              default:
+                  System.out.println("Opcion Incorrecta, por favor intente de nuevo");
+                  break;
+          }
+
+      }
+
+        }
+
+    static void convertir(double valorDolar, String pais){
+        Scanner leer = new Scanner(System. in);
+        System.out.printf("Ingrese la cantidad de %s: ", pais);
+        double cantidadMoneda = leer. nextDouble();
+
+        double dolares = cantidadMoneda / valorDolar;
+
+        dolares = (double) Math. round(dolares * 1000)/ 100;
+
+        System.out.println("********************************************");
+        System.out.println(" Total:  $" + dolares + "dolares");
+        System.out.println("********************************************");
